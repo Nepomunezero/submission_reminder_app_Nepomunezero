@@ -11,7 +11,7 @@ function check_submissions {
         student=$(echo "$student" | xargs)
         assignment=$(echo "$assignment" | xargs)
         status=$(echo "$status" | xargs)
-
+  
         # Check if assignment matches and status is 'not submitted'
         if [[ "$assignment" == "$ASSIGNMENT" && "$status" == "not submitted" ]]; then
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"

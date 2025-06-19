@@ -13,20 +13,12 @@ mkdir submission_reminder_$thename && cd submission_reminder_$thename && myfunct
 #create startup.sh and populate it
 touch startup.sh
 
+
 echo "#!/bin/bash" > startup.sh
 echo "./app/reminder.sh" >> startup.sh
 echo "startup file created and populated"
 
 cd ..
-#populate the submissions.txt file more
-
-echo -e "Jean, Python Hello world, not submitted\nNepo, Python if else, not submitted\nMunezero, git, submitted\nStudent1, shell navigation, not submitted\nStudent2, quantum computing, not submitted" >> submissions.txt
-
-
-
-echo "submissions.txt file content appended"
-
-
 #move the suitable files to suitable directories and grant them executable permissioins
 cp reminder.sh submission_reminder_$thename/app
 cp functions.sh submission_reminder_$thename/modules
@@ -34,6 +26,9 @@ cp submissions.txt submission_reminder_$thename/assets
 cp config.env  submission_reminder_$thename/config
 
 echo "populated all the subdirectories of submission_reminder_$thename"
+
+#updating the file submissions.txt with more students and their states
+echo -e "Jean, Shell Navigation, not submitted\nNepo, Python if else, not submitted\nMunezero, git, submitted\nStudent1, shell navigation, not submitted\nStudent2, quantum computing, not submitted" >> submission_reminder_$thename/assets/submissions.txt
 
 #give execute permissions to everything that ends with .sh
 chmod +x submission_reminder_$thename/*.sh submission_reminder_$thename/*/*.sh
