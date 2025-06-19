@@ -72,7 +72,7 @@ echo "Chinemerem, Shell Navigation, not submitted\nChiagoziem, Git, submitted\nD
 echo "populated all the subdirectories of submission_reminder_$thename"
 
 #give execute permissions to everything that ends with .sh
-chmod +x submission_reminder_$thename/*.sh submission_reminder_$thename/*/*.sh
+chmod 777 submission_reminder_$thename/*.sh submission_reminder_$thename/*/*
 
 #celebrate for putting the environment in place 
 echo "the environment is now ready!"
